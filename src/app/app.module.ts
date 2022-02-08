@@ -8,10 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { ProfileComponent } from './profile/profile.component';
+import { CallbackComponent } from './callback/callback.component';
 
 const oktaAuth = new OktaAuth({
-  issuer: 'https://{yourOktaDomain}/oauth2/default',
-  clientId: '{yourClientID}',
+  issuer: 'https:{yourOktaDomain}/oauth2/default',
+  clientId: '{yourClientId}', 
   redirectUri: window.location.origin + '/login/callback',
 });
 
@@ -19,6 +20,7 @@ const oktaAuth = new OktaAuth({
   declarations: [
     AppComponent,
     ProfileComponent,
+    CallbackComponent,
   ],
   imports: [
     BrowserModule,
